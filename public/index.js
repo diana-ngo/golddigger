@@ -7,26 +7,40 @@ const investmentInput = document.getElementById("investment-amount");
 const investmentSummary = document.getElementById("investment-summary");
 
 let currentLivePrice = null;
+let investmentAmt = null;
+let ouncesPurchased = null;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // grab entered amount to invest
-  const investmentAmt = Number(investmentInput.value);
+  investmentAmt = Number(investmentInput.value);
   currentLivePrice = Number(currentLivePrice);
 
-  const ouncesPurchased = (investmentAmt / currentLivePrice).toFixed(1);
+  ouncesPurchased = (investmentAmt / currentLivePrice).toFixed(1);
   investmentSummary.textContent = `You just bought ${ouncesPurchased} ounces (ozt) for £${investmentAmt}. \n You will receive documentation shortly.`;
-
-
 
   // show modal when user clicks "Invest Now!" button
   dialog.showModal();
 });
 
 // when user clicks "Okay" on modal, reset input investment amount and close modal
-closeDialogBtn.addEventListener("click", () => { 
+closeDialogBtn.addEventListener("click", async () => { 
   document.getElementById("investment-amount").value = '';
+
+  await fetch("/api/purchases", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      timestamp: new Date().toISOString(),
+      "amount paid": `£${investmentAmt}`,
+      "price per oz": `£${currentLivePrice}`,
+      "gold sold": `${ouncesPurchased} oz`,
+    }),
+  });
+
   dialog.close() 
 });
 
