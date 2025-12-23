@@ -57,7 +57,8 @@ export async function loadLivePrice() {
   }
 
   eventSource.onerror = () => {
-    console.error(`Connection lost... Attemping to reconnect...`);
+    connectionStatus.textContent = "Disconnected 🔴";
+    console.error(`Connection lost... Attempting to reconnect...`);
   }
 }
 

@@ -4,5 +4,35 @@
     "amount paid": "£505050",
     "price per oz": "£3159.00",
     "gold sold": "68.4 oz"
+  },
+  {
+    "timestamp": "2025-12-23T00:10:51.217Z",
+    "amount paid": "£10000",
+    "price per oz": "£952",
+    "gold sold": "10.5 oz"
+  },
+  {
+    "timestamp": "2025-12-23T00:11:18.677Z",
+    "amount paid": "£10000",
+    "price per oz": "£2502.00",
+    "gold sold": "Infinity oz"
+  },
+  {
+    "timestamp": "2025-12-23T00:18:01.361Z",
+    "amount paid": "£10000",
+    "price per oz": "£5620",
+    "gold sold": "1.8 oz"
+  },
+  {
+    "timestamp": "2025-12-23T00:25:38.364Z",
+    "amount paid": "£55555",
+    "price per oz": "£4422.00",
+    "gold sold": "46.4 oz"
+  },
+  {
+    "timestamp": "2025-12-23T00:26:39.656Z",
+    "amount paid": "£10050",
+    "price per oz": "£3922.00",
+    "gold sold": "5.1 oz"
   }
 ]

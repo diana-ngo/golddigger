@@ -1,6 +1,6 @@
 import { generatePrice } from './generatePrice.js';
 
-export async function getLivePrice(req, res) {
+export function getLivePrice(req, res) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");

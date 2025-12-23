@@ -1,5 +1,6 @@
 Background:
 + Gold Digger is a widget that keeps you informed of current market prices and allows you to buy gold at the click of a button.
+- Here, I build a Node server that serves static files, streams live pricing via SSE, and persists purchases to disk, managing frontend state independently of the DOM.
 
 Problem:
 + When the app is offline, we get this red circle that says "disconnected".
@@ -11,7 +12,7 @@ Problem:
 Back end:
 + Serves static files (HTML, CSS, and JavaScript).
 + Updates the front end with live prices every 2-3 seconds.
-- When a user makes a purchase, it is logged to a text file on the server. Each logged purchase has a timestamp, an amount paid, a price per ounce, and an amount of gold sold (the precise format is up to you).
++ When a user makes a purchase, it is logged to a text file on the server. Each logged purchase has a timestamp, an amount paid, a price per ounce, and an amount of gold sold (the precise format is up to you).
 + To get live gold prices, you could:
   1. You could use an API, but APIs are slow to update, with the best ones updating about every 15 min.
   2. Write an algorithm which supplies a realistic looking price on demand and is generated at random.
